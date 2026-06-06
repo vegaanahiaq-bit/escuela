@@ -1,0 +1,340 @@
+ :root {
+            --naranja: #FF9800;
+            --azul-francia: #2196F3;
+            --rosa-magenta: #E91E63;
+            --verde-menta: #2ECC71;
+            --morado-lavanda: #9b59b6;
+            --amarillo-crepe: #F1C40F;
+            --fondo-suave: #FBF7FC; /* Un fondo con un sutil toque lila */
+            --texto-oscuro: #2C3E50;
+        }
+
+        
+        /* ==========================================================================
+           3. NUESTROS 4 PILARES MÁGICOS (GRILLA) - Adaptado a Francés
+           ========================================================================== */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .pillar-card {
+            background-color: #ffffff;
+            border-radius: 25px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Decoración de color arriba de cada tarjeta */
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        /* ==========================================================================
+           2. ESTILOS DE LA SECCIÓN METODOLOGÍA
+           ========================================================================== */
+        .method-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        /* Encabezado Principal */
+        .method-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .method-intro h1 {
+            font-family: 
+            height: 8px;
+        }
+
+        .pillar-card.p-magenta::before { background-color: var(--rosa-magenta); }
+        .pillar-card.p-azul::before { background-color: var(--azul-francia); }
+        .pillar-card.p-amarillo::before { background-color: var(--amarillo-crepe); }
+        .pillar-card.p-morado::before { background-color: var(--morado-lavanda); }
+
+        .pillar-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            filter: drop-shadow(2px 4px 5px rgba(0,0,0,0.1));
+            transition: transform 0.3s ease;
+        }
+
+        .pillar-card:hover .pillar-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .pillar-card h3 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .p-magenta h3 { color: var(--rosa-magenta); }
+        .p-azul h3 { color: var(--azul-francia); }
+        .p-amarillo h3 { color: var(--amarillo-crepe); }
+        .p-morado h3 { color: var(--morado-lavanda); }
+
+        .pillar-card p {
+            font-size: 1rem;
+            color: #657786;
+        }
+
+        /* ==========================================================================
+           4. LÍNEA DE TIEMPO: UN DÍA EN CLASE DE FRANCÉS
+           ========================================================================== */
+        .timeline-section {
+            background-color: #ffffff;
+            border-radius: 40px;
+            padding: 60px 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+            margin-bottom: 60px;
+        }
+
+        .timeline-title {
+            text-align: center;
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem;
+            color: var(--azul-francia);
+            margin-bottom: 50px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Línea central vertical */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #F3E5F5; /* Tono lila pastel para la línea */
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+
+        /* Contenedor de cada paso */
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        /* Círculos decorativos en la línea */
+        .timeline-item::after {
+            content: '⚜️';
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            right: -17px;
+            background-color: #fff;
+            border: 4px solid var(--azul-francia);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        /* Posicionar izquierda y derecha alternados */
+        .left {
+            left: 0;
+            text-align: right;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -17px;
+        }
+
+        /* Ajustes de colores de bordes decorativos según el paso */
+        .left::after { border-color: var(--rosa-magenta); }
+        .timeline-item:nth-child(2)::after { border-color: var(--azul-francia); }
+        .timeline-item:nth-child(3)::after { border-color: var(--amarillo-crepe); }
+        .timeline-item:nth-child(4)::after { border-color: var(--morado-lavanda); }
+
+        /* Tarjeta de contenido del paso */
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--fondo-suave);
+            position: relative;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.02);
+        }
+
+        .timeline-time {
+            display: inline-block;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .left .timeline-time { background-color: var(--rosa-magenta); }
+        .timeline-item:nth-child(2) .timeline-time { background-color: var(--azul-francia); }
+        .timeline-item:nth-child(3) .timeline-time { background-color: var(--amarillo-crepe); color: #333; }
+        .timeline-item:nth-child(4) .timeline-time { background-color: var(--morado-lavanda); }
+
+        .timeline-content h4 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--texto-oscuro);
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+            color: #657786;
+        }
+
+        /* ==========================================================================
+           5. LLAMADO A LA ACCIÓN (CTA) - Esencia Francesa
+           ========================================================================== */
+        .method-cta {
+            text-align: center;
+            background: linear-gradient(135deg, var(--rosa-magenta), #C2185B);
+            border-radius: 35px;
+            padding: 50px 30px;
+            color: #ffffff;
+            box-shadow: 0 15px 30px rgba(233, 30, 99, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Burbuja decorativa de fondo */
+        .method-cta::before {
+            content: '🗼';
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.12;
+            bottom: -30px;
+            left: 20px;
+        }
+
+        .method-cta::after {
+            content: '🎨';
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.12;
+            top: -20px;
+            right: 20px;
+        }
+
+        .method-cta h2 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+        }
+
+        .method-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ffffff;
+            color: var(--rosa-magenta);
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+            background-color: var(--amarillo-crepe);
+            color: #333;
+        }
+
+        /* ==========================================================================
+           6. RESPONSIVO (PANTALLAS MENORES A 768px)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            .method-intro h1 {
+                font-size: 2.2rem;
+            }
+
+            .method-intro p {
+                font-size: 1.1rem;
+            }
+
+            /* Reajuste de la Línea de Tiempo a una Sola Columna */
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                text-align: left;
+            }
+
+            .left, .right {
+                left: 0 !important;
+                text-align: left !important;
+            }
+
+            .timeline-item::after {
+                left: 15px !important;
+                right: auto !important;
+            }
+
+            .timeline-section {
+                padding: 40px 20px;
+            }
+
+            .method-cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .method-cta p {
+                font-size: 1rem;
+            }
+        }

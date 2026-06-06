@@ -1,0 +1,194 @@
+
+        /* ==========================================================================
+           2. CONTENEDOR DEL SLIDER (ANCHO COMPLETO Y ALTURA MODERADA)
+           ========================================================================== */
+        .slider-wrapper {
+            width: 100%;
+            height: 380px; /* Altura moderada ideal para banners */
+            position: relative;
+            overflow: hidden;
+            background-color: #000; /* Fondo oscuro de respaldo durante transiciones */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Cada diapositiva individual */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0; /* Ocultas por defecto */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* Animación: 25 segundos en total (5 segundos por imagen), loop infinito */
+            animation: fadeAnimation 25s infinite ease-in-out;
+        }
+
+        /* ==========================================================================
+           3. IMÁGENES DE FONDO (Diseñadas para escuela infantil)
+           ========================================================================== */
+        .slide:nth-child(1) {
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), 
+                              url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80');
+            animation-delay: 0s;
+        }
+
+        .slide:nth-child(2) {
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), 
+                              url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80');
+            animation-delay: 5s; /* Entra a los 5 segundos */
+        }
+
+        .slide:nth-child(3) {
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), 
+                              url('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80');
+            animation-delay: 10s; /* Entra a los 10 segundos */
+        }
+
+        .slide:nth-child(4) {
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), 
+                              url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=80');
+            animation-delay: 15s; /* Entra a los 15 segundos */
+        }
+
+        .slide:nth-child(5) {
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), 
+                              url('https://images.unsplash.com/photo-1453306458620-5bbef13a5bca?auto=format&fit=crop&w=1200&q=80');
+            animation-delay: 20s; /* Entra a los 20 segundos */
+        }
+
+        /* ==========================================================================
+           4. CONTENIDO EXCLUSIVO DENTRO DEL SLIDER
+           ========================================================================== */
+        .slide-content {
+            text-align: center;
+            color: #ffffff;
+            padding: 20px;
+            max-width: 800px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: textReveal 25s infinite ease-in-out;
+        }
+
+        /* Ajustar desfase de animación del texto interior con su diapositiva */
+        .slide:nth-child(1) .slide-content { animation-delay: 0s; }
+        .slide:nth-child(2) .slide-content { animation-delay: 5s; }
+        .slide:nth-child(3) .slide-content { animation-delay: 10s; }
+        .slide:nth-child(4) .slide-content { animation-delay: 15s; }
+        .slide:nth-child(5) .slide-content { animation-delay: 20s; }
+
+        .slide-badge {
+            display: inline-block;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 6px 16px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Colores alegres en los distintivos */
+        .badge-1 { background-color: var(--naranja); }
+        .badge-2 { background-color: var(--azul); }
+        .badge-3 { background-color: var(--rosa); }
+        .badge-4 { background-color: var(--verde); }
+        .badge-5 { background-color: var(--morado); }
+
+        .slide-content h2 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+        }
+
+        .slide-content p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+            line-height: 1.5;
+        }
+
+        /* Indicator / Barra de progreso estética en la parte inferior */
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 6px;
+            background-color: var(--naranja);
+            animation: progressRun 5s infinite linear;
+            z-index: 10;
+        }
+
+        /* ==========================================================================
+           5. LÓGICA DE LAS ANIMACIONES EN CSS (La clave del Slider)
+           ========================================================================== */
+        
+        /* Animación para el difuminado del contenedor */
+        @keyframes fadeAnimation {
+            0% { opacity: 0; }
+            4% { opacity: 1; }   /* Se desvanece de manera ascendente en 1s */
+            20% { opacity: 1; }  /* Se mantiene visible durante 4s */
+            24% { opacity: 0; }  /* Se desvanece de manera descendente en 1s */
+            100% { opacity: 0; } /* Permanece oculto el resto del ciclo */
+        }
+
+        /* Animación para el texto que acompaña al slide (Efecto sutil de subida) */
+        @keyframes textReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            4% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            20% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            24% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Barra de progreso inferior para dar dinamismo */
+        @keyframes progressRun {
+            0% { width: 0%; background-color: var(--naranja); }
+            50% { background-color: var(--azul); }
+            100% { width: 100%; background-color: var(--rosa); }
+        }
+
+        /* ==========================================================================
+           6. DISEÑO ADAPTATIVO (Móviles)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            .slider-wrapper {
+                height: 280px; /* Altura más compacta en móviles */
+            }
+
+            .slide-content h2 {
+                font-size: 1.8rem;
+                margin-bottom: 8px;
+            }
+
+            .slide-content p {
+                font-size: 0.95rem;
+            }
+
+            .slide-badge {
+                font-size: 0.75rem;
+                padding: 4px 12px;
+            }
+        }

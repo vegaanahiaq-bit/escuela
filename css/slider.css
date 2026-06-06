@@ -1,0 +1,213 @@
+/* ==========================================================================
+   5. SECCIÓN DE CONTENIDO PRINCIPAL Y FONDOS
+   ========================================================================== */
+.main-content {
+    background-color: #f0f7f4; /* Fondo verde pastel muy suave y limpio */
+    padding: 60px 20px 120px 20px; /* Margen amplio abajo para la grilla */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* ==========================================================================
+   6. ESTILOS DEL SLIDER MANUAL
+   ========================================================================== */
+.slider-section {
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: -50px; /* Margen negativo para que la grilla monte sobre el slider */
+    position: relative;
+    z-index: 1;
+}
+
+.slider-container {
+    background-color: #ffffff;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    position: relative;
+    min-height: 400px;
+}
+
+/* Manejo de transiciones entre slides */
+.slide {
+    display: none;
+    width: 100%;
+}
+
+.slide.active {
+    display: flex; /* Dividido en dos (Izquierda y Derecha) */
+    animation: popIn 0.5s ease-out;
+}
+
+/* Lado Izquierdo: Imagen */
+.slide-left {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Lado Derecho: Información */
+.slide-right {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #ffffff;
+}
+
+/* Variaciones de color para cada producto/idioma */
+.color-ingles { background-color: #2196F3; } /* Azul vivo */
+.color-frances { background-color: #E91E63; } /* Rosa/Rojo vivo */
+
+.badge {
+    background-color: #ffffff;
+    color: #333;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.slide-right h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.slide-right p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.slide-btn {
+    background-color: #ffffff;
+    color: #333;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.slide-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Flechas del Slider */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    transition: background-color 0.2s;
+    z-index: 10;
+}
+
+.slider-arrow:hover { background-color: #ffffff; }
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* ==========================================================================
+   7. GRILLA INFORMATIVA (3x1) SUPERPUESTA
+   ========================================================================== */
+.info-grid-section {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    z-index: 2; /* Mayor que el slider para estar por encima */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 20px;
+}
+
+.grid-card {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    border-bottom: 5px solid transparent;
+    transition: transform 0.3s ease;
+}
+
+.grid-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Colores en el borde inferior para conectar con la marca */
+.item-naranja { border-bottom-color: #FF9800; }
+.item-morado { border-bottom-color: #9C27B0; }
+.item-verde { border-bottom-color: #4CAF50; }
+
+.grid-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.grid-card h3 {
+    font-family: 'Fredoka One', cursive;
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.grid-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   8. RESPONSIVO PARA LA NUEVA SECCIÓN
+   ========================================================================== */
+@media (max-width: 768px) {
+    .slide.active {
+        flex-direction: column; /* Imagen arriba, texto abajo */
+    }
+
+    .slide-left {
+        height: 250px;
+    }
+
+    .slide-right {
+        padding: 35px 25px;
+    }
+
+    .slider-section {
+        margin-bottom: 30px; /* Eliminamos el solape en móviles */
+    }
+
+    /* Grilla cambia de 3x1 a 1x3 vertical */
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
