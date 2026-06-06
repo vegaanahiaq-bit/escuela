@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Divertido - Escuela de Idiomas</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/grilla.css">
+    <link rel="stylesheet" href="barras.css"> <link rel="stylesheet" href="css/pie.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght=500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#">Polyglot<span>Kids</span></a>
+            </div>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger-label">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="btn-inicio">Inicio</a></li>
+                    <li><a href="ingles.html" class="btn-ingles">Inglés 🇬🇧</a></li>
+                    <li><a href="frances.html" class="btn-frances">Francés 🇫🇷</a></li>
+                    <li><a href="nosotros.html" class="btn-nosotros">Nosotros</a></li>
+                    <li><a href="contacto.html" class="btn-contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-layout">
+        
+        <aside class="sidebar-left">
+            <div class="sidebar-item">
+                <img src="imagenes/im4.jpeg" alt="Jóvenes divirtiéndose 1">
+            </div>
+            <div class="sidebar-item">
+                <img src="imagenes/im5.jpeg" alt="Estudiantes sonriendo">
+            </div>
+                        <div class="sidebar-item">
+                <img src="imagenes/im6.jpg" alt="Estudiantes sonriendo">
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <section class="slider-section">
+                <div class="slider-container">
+                    
+                    <div class="slide active">
+                        <div class="slide-left">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80" alt="Niños aprendiendo Inglés">
+                        </div>
+                        <div class="slide-right color-ingles">
+                            <span class="badge">¡New!</span>
+                            <h2>English Adventure</h2>
+                            <p>Aprende inglés jugando, cantando y descubriendo nuevos mundos. Clases dinámicas 100% nativas para niños de 4 a 12 años.</p>
+                            <a href="#" class="slide-btn">Ver horarios</a>
+                        </div>
+                    </div>
+
+                    <div class="slide">
+                        <div class="slide-left">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Niños aprendiendo Francés">
+                        </div>
+                        <div class="slide-right color-frances">
+                            <span class="badge">Petit Bleu</span>
+                            <h2>Le Petit Atelier</h2>
+                            <p>¡Bonjour! Descubre la magia del francés a través del arte, el teatro y la cocina interactiva. Diseñado para mentes curiosas.</p>
+                            <a href="#" class="slide-btn">Más información</a>
+                        </div>
+                    </div>
+
+                    <button class="slider-arrow prev-btn" id="prevBtn">&#10094;</button>
+                    <button class="slider-arrow next-btn" id="nextBtn">&#10095;</button>
+                </div>
+            </section>
+
+            <section class="info-grid-section">
+                <div class="grid-container">
+                    <div class="grid-card item-naranja">
+                        <div class="icon">🏫</div>
+                        <h3>Método Activo</h3>
+                        <p>Aprendizaje natural basado en proyectos y juegos interactivos.</p>
+                    </div>
+                    <div class="grid-card item-morado">
+                        <div class="icon">👩‍🏫</div>
+                        <h3>Profesores Nativos</h3>
+                        <p>Especialistas en la enseñanza infantil y certificados.</p>
+                    </div>
+                    <div class="grid-card item-verde">
+                        <div class="icon">🎨</div>
+                        <h3>Grupos Reducidos</h3>
+                        <p>Atención personalizada con un máximo de 8 alumnos por aula.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="programs-section">
+                <h2 class="section-title">Nuestras Actividades</h2>
+                
+                <div class="programs-grid">
+                    <article class="program-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=500&q=80" alt="Talleres Creativos">
+                        </div>
+                        <div class="card-content">
+                            <h3>Arte Creativo</h3>
+                            <p>Aprendemos vocabulario nuevo mientras pintamos y creamos manualidades increíbles.</p>
+                            <a href="#" class="card-btn btn-orange">¡Me interesa!</a>
+                        </div>
+                    </article>
+
+                    <article class="program-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1453306458620-5bbef13a5bca?auto=format&fit=crop&w=500&q=80" alt="Club de Música">
+                        </div>
+                        <div class="card-content">
+                            <h3>Canto & Ritmo</h3>
+                            <p>La música es la mejor forma de mejorar la pronunciación y perder el miedo a hablar.</p>
+                            <a href="#" class="card-btn btn-blue">Ver canciones</a>
+                        </div>
+                    </article>
+
+                    <article class="program-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1536337005238-94b997371b40?auto=format&fit=crop&w=500&q=80" alt="Juegos al aire libre">
+                        </div>
+                        <div class="card-content">
+                            <h3>Exploradores</h3>
+                            <p>Salimos al jardín para aprender nombres de plantas y animales en otros idiomas.</p>
+                            <a href="#" class="card-btn btn-green">Únete al club</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="sidebar-item">
+                <img src="imagenes/im1.jpg">
+            </div>
+            <div class="sidebar-item">
+                <img src="imagenes/im2.jpg" alt="Niños pintando divertidos">
+            </div>
+                        <div class="sidebar-item">
+                <img src="imagenes/auxim3.jpg" alt="Niños pintando divertidos">
+            </div>
+        </aside>
+
+    </div> <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+    </script>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <a href="#" class="footer-logo">Polyglot<span>Kids</span></a>
+                <p>Somos una escuela de idiomas creada para que los más pequeños aprendan inglés y francés con una sonrisa. ¡Aprender es divertido!</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Aprende Más</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Cursos de Inglés 🇬🇧</a></li>
+                    <li><a href="#">Cursos de Francés 🇫🇷</a></li>
+                    <li><a href="#">Talleres de Sábado</a></li>
+                    <li><a href="#">Inscripciones Abiertas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul class="footer-contact">
+                    <li>📞 +52 123 456 7890</li>
+                    <li>✉️ hello@polyglotkids.com</li>
+                    <li>📍 Av. de los Idiomas Divertidos #123</li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" title="Facebook">f</a>
+                    <a href="#" class="social-icon" title="Instagram">ig</a>
+                    <a href="#" class="social-icon" title="YouTube">yt</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 PolyglotKids. Creado con ❤️ para pequeños políglotas. <a href="#">Aviso de Privacidad</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/pie.css">
+    <title>Contacto - PolyglotKids</title>
+    <!-- Fuentes amigables y redondeadas -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* */
+        :root {
+            --naranja: #FF9800;
+            --azul: #2196F3;
+            --rosa: #E91E63;
+            --verde: #2ECC71;
+            --morado: #9b59b6;
+            --amarillo: #F1C40F;
+            --fondo-suave: #F3F9FB; /* Azul/Celeste pastel ultra suave */
+            --texto-oscuro: #2C3E50;
+        }
+
+
+        /* */
+        .contact-section {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contact-header h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3rem;
+            color: var(--naranja);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.03);
+        }
+
+        .contact-header p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #5a738e;
+            font-weight: 500;
+        }
+
+        /* Contenedor principal de dos columnas */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1.2fr 1.8fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* */
+        /* Columna Izquierda: Información de contacto */
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-card {
+            background-color: #ffffff;
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 3px solid transparent;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Bordes interactivos por tarjeta */
+        .card-phone { border-color: var(--azul); }
+        .card-email { border-color: var(--rosa); }
+        .card-location { border-color: var(--verde); }
+
+        .card-icon {
+            font-size: 3rem;
+            width: 70px;
+            height: 70px;
+            background-color: var(--fondo-suave);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover .card-icon {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .card-details h3 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .card-phone h3 { color: var(--azul); }
+        .card-email h3 { color: var(--rosa); }
+        .card-location h3 { color: var(--verde); }
+
+        .card-details p, .card-details a {
+            font-size: 1.05rem;
+            color: #657786;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .card-details a:hover {
+            color: var(--texto-oscuro);
+            text-decoration: underline;
+        }
+
+        /* */
+        /* Columna Derecha: Formulario de contacto */
+        .contact-form-container {
+            background-color: #ffffff;
+            border-radius: 40px;
+            padding: 50px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+            border: 4px solid var(--morado);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2rem;
+            color: var(--morado);
+            margin-bottom: 30px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Cuadrícula interna del formulario */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* El mensaje ocupa todo el ancho */
+        .form-full-width {
+            grid-column: span 2;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--texto-oscuro);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* */
+        .form-control {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 14px 20px;
+            border-radius: 20px;
+            border: 3px solid #E2E8F0;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: #FCFDFD;
+        }
+
+        .form-control:focus {
+            border-color: var(--morado);
+            box-shadow: 0 0 0 4px rgba(155, 89, 182, 0.15);
+            background-color: #ffffff;
+        }
+
+        select.form-control {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%239b59b6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+            padding-right: 45px;
+        }
+
+        textarea.form-control {
+            resize: none;
+            min-height: 120px;
+        }
+
+        /* */
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--morado), #8e44ad);
+            color: #ffffff;
+            border: none;
+            padding: 16px;
+            border-radius: 25px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(155, 89, 182, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.02) translateY(-2px);
+            box-shadow: 0 12px 30px rgba(155, 89, 182, 0.45);
+            background: linear-gradient(135deg, #a569bd, var(--morado));
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98) translateY(0);
+        }
+
+        /* */
+        /* Tarjeta de Éxito Oculta */
+        .success-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            z-index: 5;
+        }
+
+        .success-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .success-icon {
+            font-size: 5rem;
+            animation: bounceIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 20px;
+        }
+
+        .success-overlay h2 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem;
+            color: var(--verde);
+            margin-bottom: 15px;
+        }
+
+        .success-overlay p {
+            font-size: 1.15rem;
+            color: #5a738e;
+            max-width: 450px;
+            margin-bottom: 30px;
+        }
+
+        .reset-btn {
+            background-color: var(--fondo-suave);
+            color: var(--texto-oscuro);
+            border: 3px solid #E2E8F0;
+            padding: 12px 25px;
+            border-radius: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .reset-btn:hover {
+            background-color: #ffffff;
+            border-color: var(--morado);
+            color: var(--morado);
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            70% { transform: scale(0.9); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* */
+        @media (max-width: 992px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 40px 15px;
+            }
+
+            .contact-form-container {
+                padding: 30px 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-full-width {
+                grid-column: span 1;
+            }
+
+            .contact-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-header p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+        <header class="header">
+        <div class="nav-container">
+            <!-- Logo a la izquierda -->
+            <div class="logo">
+                <a href="#">Polyglot<span>Kids</span></a>
+            </div>
+
+            <!-- Checkbox invisible para controlar el menú móvil sin JavaScript -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger-label">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Contenido del menú centrado -->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="btn-inicio">Inicio</a></li>
+                    <li><a href="ingles.html" class="btn-ingles">Inglés 🇬🇧</a></li>
+                    <li><a href="frances.html" class="btn-frances">Francés 🇫🇷</a></li>
+                    <li><a href="nosotros.html" class="btn-nosotros">Nosotros</a></li>
+                    <li><a href="contacto.html" class="btn-contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- -->
+    <section class="contact-section">
+        
+        <!-- ENCABEZADO PRINCIPAL -->
+        <div class="contact-header">
+            <h1>¡Escríbenos una Cartita! 💌✨</h1>
+            <p>¿Tienes dudas sobre las clases, horarios o inscripciones? Mándanos un mensaje mágico y nuestro equipo te responderá volando.</p>
+        </div>
+
+        <div class="contact-wrapper">
+            
+            <!-- -->
+            <!-- COLUMNA IZQUIERDA: INFORMACIÓN RÁPIDA -->
+            <div class="contact-info-cards">
+                
+                <!-- Tarjeta Teléfono -->
+                <div class="info-card card-phone">
+                    <div class="card-icon">📞</div>
+                    <div class="card-details">
+                        <h3>Llámanos o WhatsApp</h3>
+                        <p><a href="tel:+521234567890">+52 123 456 7890</a></p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Correo -->
+                <div class="info-card card-email">
+                    <div class="card-icon">✉️</div>
+                    <div class="card-details">
+                        <h3>Envíanos un Correo</h3>
+                        <p><a href="mailto:hello@polyglotkids.com">hello@polyglotkids.com</a></p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Dirección -->
+                <div class="info-card card-location">
+                    <div class="card-icon">📍</div>
+                    <div class="card-details">
+                        <h3>Nuestras Instalaciones</h3>
+                        <p>Av. de los Idiomas Divertidos #123, Ciudad de los Niños</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- -->
+            <!-- COLUMNA DERECHA: FORMULARIO DE CONTACTO -->
+            <div class="contact-form-container">
+                
+                <h2 class="form-title">Buzón de Mensajes Mágicos 📬</h2>
+                
+                <form id="magicContactForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-grid">
+                        
+                        <!-- Nombre del Papá/Mamá -->
+                        <div class="form-group">
+                            <label for="parentName">👨‍👩‍👧 Tu Nombre completo</label>
+                            <input type="text" id="parentName" class="form-control" placeholder="Ej. Ana Martínez" required>
+                        </div>
+
+                        <!-- Correo Electrónico -->
+                        <div class="form-group">
+                            <label for="parentEmail">✉️ Tu Correo electrónico</label>
+                            <input type="email" id="parentEmail" class="form-control" placeholder="Ej. ana@mail.com" required>
+                        </div>
+
+                        <!-- Nombre del Pequeño -->
+                        <div class="form-group">
+                            <label for="childName">🧒 Nombre de tu peque</label>
+                            <input type="text" id="childName" class="form-control" placeholder="Ej. Mateo" required>
+                        </div>
+
+                        <!-- Curso / Idioma de Interés -->
+                        <div class="form-group">
+                            <label for="languageInterest">🎨 Idioma de interés</label>
+                            <select id="languageInterest" class="form-control" required>
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="ingles">Inglés 🇬🇧 (Active Speech)</option>
+                                <option value="frances">Francés 🇫🇷 (Atelier d'Art)</option>
+                                <option value="ambos">¡Ambos Idiomas! 🌟</option>
+                            </select>
+                        </div>
+
+                        <!-- Mensaje / Comentario -->
+                        <div class="form-group form-full-width">
+                            <label for="magicMessage">📝 Cuéntanos en qué te podemos ayudar</label>
+                            <textarea id="magicMessage" class="form-control" placeholder="Escribe aquí tu mensaje sobre horarios, costos o dudas..." required></textarea>
+                        </div>
+
+                    </div>
+
+                    <!-- Botón Enviar -->
+                    <button type="submit" class="submit-btn">
+                        <span>¡Enviar Mensaje Mágico! 🚀</span>
+                    </button>
+                </form>
+
+                <!-- -->
+                <!-- PANTALLA DE ÉXITO (Oculta por defecto) -->
+                <div class="success-overlay" id="successScreen">
+                    <div class="success-icon">🎉📨</div>
+                    <h2>¡Carta Recibida con Éxito!</h2>
+                    <p>¡Muchas gracias por escribirnos! Un duendecillo bilingüe ya está leyendo tu mensaje y nos comunicaremos contigo volando al correo que nos proporcionaste.</p>
+                    <button class="reset-btn" onclick="resetMagicForm()">Enviar otra cartita</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- -->
+    <script>
+        function handleFormSubmit(event) {
+            // Evitamos la recarga del formulario estándar
+            event.preventDefault();
+            
+            // Mostramos la animación de éxito agregando la clase
+            const successScreen = document.getElementById('successScreen');
+            successScreen.classList.add('show');
+        }
+
+        function resetMagicForm() {
+            // Reseteamos los campos del formulario
+            document.getElementById('magicContactForm').reset();
+            
+            // Ocultamos la pantalla de éxito
+            const successScreen = document.getElementById('successScreen');
+            successScreen.classList.remove('show');
+        }
+    </script>
+
+</body>
+
+   <footer class="footer">
+        <div class="footer-container">
+            
+            <!-- Columna 1: Logo e Info -->
+            <div class="footer-column">
+                <a href="#" class="footer-logo">Polyglot<span>Kids</span></a>
+                <p>Somos una escuela de idiomas creada para que los más pequeños aprendan inglés y francés con una sonrisa. ¡Aprender es divertido!</p>
+            </div>
+
+            <!-- Columna 2: Enlaces Rápidos -->
+            <div class="footer-column">
+                <h3>Aprende Más</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Cursos de Inglés 🇬🇧</a></li>
+                    <li><a href="#">Cursos de Francés 🇫🇷</a></li>
+                    <li><a href="#">Talleres de Sábado</a></li>
+                    <li><a href="#">Inscripciones Abiertas</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Contacto y Redes -->
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul class="footer-contact">
+                    <li>📞 +52 123 456 7890</li>
+                    <li>✉️ hello@polyglotkids.com</li>
+                    <li>📍 Av. de los Idiomas Divertidos #123</li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" title="Facebook">f</a>
+                    <a href="#" class="social-icon" title="Instagram">ig</a>
+                    <a href="#" class="social-icon" title="YouTube">yt</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 PolyglotKids. Creado con ❤️ para pequeños políglotas. <a href="#">Aviso de Privacidad</a></p>
+        </div>
+    </footer>
+
+</html>

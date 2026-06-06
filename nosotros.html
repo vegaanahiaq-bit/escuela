@@ -1,0 +1,491 @@
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilo.css">
+        <link rel="stylesheet" href="css/pie.css">
+    <title>Nosotros - PolyglotKids</title>
+    <!-- Fuentes divertidas y amigables -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           1. RESET Y VARIABLES DE COLOR (Esencia Alegre y Profesional)
+           ========================================================================== */
+        :root {
+            --naranja: #FF9800;
+            --azul: #2196F3;
+            --rosa: #E91E63;
+            --verde: #2ECC71;
+            --morado: #9b59b6;
+            --amarillo: #F1C40F;
+            --fondo-suave: #F4F8FA; /* Azul pastel muy sutil */
+            --texto-oscuro: #2C3E50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+     
+
+        /* ==========================================================================
+           2. ESTILOS DE LA SECCIÓN (Estructura y Títulos)
+           ========================================================================== */
+        .about-section {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .about-header h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3rem;
+            color: var(--morado);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.03);
+        }
+
+        .about-header p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #5a738e;
+            font-weight: 500;
+        }
+
+        /* ==========================================================================
+           3. ESTILOS DE LOS 3 GRANDES PILARES DE CALIDAD
+           ========================================================================== */
+        .pillars-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .about-card {
+            background-color: #ffffff;
+            border-radius: 35px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid transparent;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Bordes de colores correspondientes */
+        .card-institute { border-color: var(--azul); }
+        .card-quality { border-color: var(--verde); }
+        .card-teachers { border-color: var(--naranja); }
+
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .about-card:hover .card-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .about-card h3 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .card-institute h3 { color: var(--azul); }
+        .card-quality h3 { color: var(--verde); }
+        .card-teachers h3 { color: var(--naranja); }
+
+        .about-card p {
+            font-size: 1.05rem;
+            color: #657786;
+            margin-bottom: 20px;
+        }
+
+        /* ==========================================================================
+           4. SECCIÓN DETALLADA: NUESTROS SUPERPROFESORES
+           ========================================================================== */
+        .teachers-spotlight {
+            background-color: #ffffff;
+            border-radius: 40px;
+            padding: 50px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .spotlight-visual {
+            flex: 1;
+            position: relative;
+        }
+
+        .teacher-badge-container {
+            width: 100%;
+            height: 350px;
+            border-radius: 30px;
+            background-image: linear-gradient(135deg, rgba(233, 30, 99, 0.1), rgba(155, 89, 182, 0.15)),
+                              url('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80');
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 6px solid #ffffff;
+            outline: 3px solid var(--rosa);
+        }
+
+        .spotlight-info {
+            flex: 1.2;
+        }
+
+        .spotlight-info h2 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem;
+            color: var(--rosa);
+            margin-bottom: 15px;
+        }
+
+        .spotlight-info p {
+            font-size: 1.1rem;
+            color: #5a738e;
+            margin-bottom: 25px;
+        }
+
+        .check-list {
+            list-style: none;
+        }
+
+        .check-list li {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--texto-oscuro);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .check-list li::before {
+            content: "🌟";
+            font-size: 1.2rem;
+        }
+
+        /* ==========================================================================
+           5. CONTADORES / LOGROS DE NUESTRO INSTITUTO
+           ========================================================================== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .stat-card {
+            background-color: #ffffff;
+            padding: 30px 20px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            border-top: 5px solid;
+        }
+
+        .stat-card:nth-child(1) { border-top-color: var(--naranja); }
+        .stat-card:nth-child(2) { border-top-color: var(--azul); }
+        .stat-card:nth-child(3) { border-top-color: var(--rosa); }
+        .stat-card:nth-child(4) { border-top-color: var(--verde); }
+
+        .stat-number {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.8rem;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-card:nth-child(1) .stat-number { color: var(--naranja); }
+        .stat-card:nth-child(2) .stat-number { color: var(--azul); }
+        .stat-card:nth-child(3) .stat-number { color: var(--rosa); }
+        .stat-card:nth-child(4) .stat-number { color: var(--verde); }
+
+        .stat-label {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #657786;
+        }
+
+        /* ==========================================================================
+           6. LLAMADO A LA ACCIÓN (CTA COMPROMISO)
+           ========================================================================== */
+        .trust-cta {
+            background: linear-gradient(135deg, var(--morado), #6c3483);
+            border-radius: 35px;
+            padding: 50px 40px;
+            text-align: center;
+            color: #ffffff;
+            box-shadow: 0 15px 30px rgba(155, 89, 182, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-cta h2 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .trust-cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: #f5eef8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ffffff;
+            color: var(--morado);
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+            background-color: var(--amarillo);
+            color: #333;
+        }
+
+        /* ==========================================================================
+           7. RESPONSIVO (PANTALLAS MENORES A 992px y 768px)
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .pillars-container {
+                grid-template-columns: 1fr; /* Una columna para que respire */
+                gap: 25px;
+            }
+
+            .teachers-spotlight {
+                flex-direction: column;
+                padding: 30px;
+            }
+
+            .spotlight-visual {
+                width: 100%;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr); /* Grilla de 2x2 en tablets */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .about-header p {
+                font-size: 1.05rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr; /* Una columna en celulares */
+            }
+
+            .trust-cta h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+        <header class="header">
+        <div class="nav-container">
+            <!-- Logo a la izquierda -->
+            <div class="logo">
+                <a href="#">Polyglot<span>Kids</span></a>
+            </div>
+
+            <!-- Checkbox invisible para controlar el menú móvil sin JavaScript -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger-label">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Contenido del menú centrado -->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="btn-inicio">Inicio</a></li>
+                    <li><a href="ingles.html" class="btn-ingles">Inglés 🇬🇧</a></li>
+                    <li><a href="frances.html" class="btn-frances">Francés 🇫🇷</a></li>
+                    <li><a href="nosotros.html" class="btn-nosotros">Nosotros</a></li>
+                    <li><a href="contacto.html" class="btn-contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+
+
+    <section class="about-section">
+        
+        <!-- ENCABEZADO PRINCIPAL -->
+        <div class="about-header">
+            <h1>¡Un Segundo Hogar de Aprendizaje! 🏫✨</h1>
+            <p>Descubre el espíritu que nos impulsa a diario como la academia preferida por papás y mamás para que sus pequeños conquisten el mundo con un nuevo idioma.</p>
+        </div>
+
+        <!-- GRILLA DE PILARES DE CONFIANZA -->
+        <div class="pillars-container">
+            
+            <!-- Pilar 1: Quiénes Somos -->
+            <div class="about-card card-institute">
+                <div class="card-icon">🦄</div>
+                <h3>¿Cómo somos?</h3>
+                <p>Somos un espacio de felicidad, seguridad y calidez humana. Nos apasiona construir recuerdos inolvidables mientras abrimos las puertas de la cultura global.</p>
+            </div>
+
+            <!-- Pilar 2: Calidad de Servicio -->
+            <div class="about-card card-quality">
+                <div class="card-icon">🏆</div>
+                <h3>Calidad Garantizada</h3>
+                <p>Nuestras metodologías están avaladas internacionalmente. Cuidamos cada detalle: desde un entorno 100% seguro hasta materiales didácticos de vanguardia.</p>
+            </div>
+
+            <!-- Pilar 3: Profesores -->
+            <div class="about-card card-teachers">
+                <div class="card-icon">🦸‍♂️</div>
+                <h3>Superprofesores</h3>
+                <p>Más que educadores, son guías con súper poderes pedagógicos y gran carisma, formados especialmente en el desarrollo y psicología de la primera infancia.</p>
+            </div>
+
+        </div>
+
+        <!-- SECCIÓN EN DETALLE: COMPROMISO DOCENTE -->
+        <div class="teachers-spotlight">
+            
+            <div class="spotlight-visual">
+                <div class="teacher-badge-container"></div>
+            </div>
+
+            <div class="spotlight-info">
+                <h2>El Corazón de PolyglotKids: Nuestros Guías ❤️</h2>
+                <p>Creemos que el amor y la paciencia son el motor del aprendizaje. Por eso, nuestro equipo de profesores está rigurosamente seleccionado para garantizar una experiencia óptima.</p>
+                
+                <ul class="check-list">
+                    <li>Profesores nativos y bilingües certificados a nivel mundial.</li>
+                    <li>Capacitación continua en dinámicas lúdicas y pedagogía emocional.</li>
+                    <li>Grupos súper reducidos para brindar atención 100% individualizada.</li>
+                    <li>Especialistas en transformar la gramática en risas y juego activo.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- INDICADORES CLAVE / ESTADÍSTICAS -->
+        <div class="stats-grid">
+            
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Profesores Certificados</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">+800</div>
+                <div class="stat-label">Alumnos Felices</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Años de Sonrisas</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">8 max</div>
+                <div class="stat-label">Niños por Grupo</div>
+            </div>
+
+        </div>
+
+        <!-- LLAMADO A LA ACCIÓN FINAL -->
+        <div class="trust-cta">
+            <h2>¿Listo para verlos brillar? 🌟</h2>
+            <p>La educación de calidad empieza con una sola decisión inteligente. Te invitamos a agendar una cita para conocer nuestras coloridas instalaciones y platicar con nuestros docentes.</p>
+            <a href="#" class="cta-button">¡Agendar una Cita Gratuita!</a>
+        </div>
+
+    </section>
+
+</body>
+   <footer class="footer">
+        <div class="footer-container">
+            
+            <!-- Columna 1: Logo e Info -->
+            <div class="footer-column">
+                <a href="#" class="footer-logo">Polyglot<span>Kids</span></a>
+                <p>Somos una escuela de idiomas creada para que los más pequeños aprendan inglés y francés con una sonrisa. ¡Aprender es divertido!</p>
+            </div>
+
+            <!-- Columna 2: Enlaces Rápidos -->
+            <div class="footer-column">
+                <h3>Aprende Más</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Cursos de Inglés 🇬🇧</a></li>
+                    <li><a href="#">Cursos de Francés 🇫🇷</a></li>
+                    <li><a href="#">Talleres de Sábado</a></li>
+                    <li><a href="#">Inscripciones Abiertas</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Contacto y Redes -->
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul class="footer-contact">
+                    <li>📞 +52 123 456 7890</li>
+                    <li>✉️ hello@polyglotkids.com</li>
+                    <li>📍 Av. de los Idiomas Divertidos #123</li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" title="Facebook">f</a>
+                    <a href="#" class="social-icon" title="Instagram">ig</a>
+                    <a href="#" class="social-icon" title="YouTube">yt</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Anahi Vega Aquino ❤️ instituto de compuingles de oriente 
+        </div>
+    </footer>
+
+</html>

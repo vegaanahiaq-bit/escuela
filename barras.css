@@ -1,0 +1,83 @@
+/* ==========================================================================
+   ESTILOS PARA LAS BARRAS LATERALES VERTICALES
+   ========================================================================== */
+
+/* Contenedor principal para organizar las barras y el contenido central */
+.page-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1600px; /* Ampliado para dar espacio a las barras laterales */
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Ajuste del contenido central para que conviva con las barras */
+.main-content {
+    flex: 1;
+    min-width: 0; /* Evita que el flex-item se desborde */
+    padding: 40px 20px;
+}
+
+/* Estilo base y estático de ambas barras laterales */
+.sidebar-left,
+.sidebar-right {
+    width: 180px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 90px; /* Se queda estática abajo del header pegajoso */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+}
+
+/* Detalles estéticos para la barra izquierda (Borde naranja infantil) */
+.sidebar-left {
+    border-radius: 0 30px 30px 0;
+    border-right: 6px solid var(--naranja);
+}
+
+/* Detalles estéticos para la barra derecha (Borde verde infantil) */
+.sidebar-right {
+    border-radius: 30px 0 0 30px;
+    border-left: 6px solid var(--verde);
+}
+
+/* Contenedor individual de cada imagen en la barra lateral */
+.sidebar-item {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.sidebar-item:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+/* Ajuste de las imágenes para que mantengan la proporción */
+.sidebar-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================================================
+   RESPONSIVO: Ocultar barras en tablets y móviles para priorizar el contenido
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .sidebar-left,
+    .sidebar-right {
+        display: none; /* Las barras desaparecen para no apretar el slider y la grilla */
+    }
+    
+    .page-layout {
+        display: block; /* El flujo vuelve a la normalidad */
+    }
+}
